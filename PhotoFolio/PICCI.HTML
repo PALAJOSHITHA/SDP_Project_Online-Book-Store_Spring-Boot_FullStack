@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books in Ascending Order</title>
+</head>
+<body>
+    <h1>Books in Ascending Order</h1>
+
+    <?php
+    // Define an array of books
+    $books = array(
+        "The Catcher in the Rye",
+        "To Kill a Mockingbird",
+        "1984",
+        "Pride and Prejudice",
+        "The Great Gatsby",
+        "The Hobbit",
+        "Fahrenheit 451",
+        "Brave New World"
+    );
+
+    // Sort the array in ascending order
+    sort($books);
+
+    // Check if there's a browsing request
+    $currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+    $perPage = 3; // Number of books per page
+    $totalBooks = count($books);
+    $totalPages = ceil($totalBooks / $perPage);
+
+    // Determine the books to display on the current page
+    $startIndex = ($currentPage - 1) * $perPage;
+    $endIndex = min($startIndex + $perPage, $totalBooks);
+
+    // Display the books for the current page
+    echo "<ul>";
+    for ($i = $startIndex; $i < $endIndex; $i++) {
+        echo "<li>{$books[$i]}</li>";
+    }
+    echo "</ul>";
+
+    // Display navigation buttons
+    if ($currentPage > 1) {
+        echo "<a href='?page=" . ($currentPage - 1) . "'>Previous</a> ";
+    }
+    if ($currentPage < $totalPages) {
+        echo "<a href='?page=" . ($currentPage + 1) . "'>Next</a>";
+    }
+    ?>
+</body>
+</html>

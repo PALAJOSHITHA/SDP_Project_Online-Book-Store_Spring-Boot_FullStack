@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Publication Database</title>
+    <style>
+        .card {
+            width: 300px; /* Set the desired width */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Add styles to make it long */
+        .long-card {
+            height: 400px; /* Set the desired height for the long card */
+            overflow: auto; /* Add scrollbars if content overflows the card */
+        }
+
+        /* Add your CSS styling here */
+        #navbar {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        #navbar input[type="text"] {
+            padding: 5px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        #navbar button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }     
+     body {
+            background-image: url('https://cdn.wallpapersafari.com/96/66/qhGnAH.jpg');
+            background-size: cover; /* This makes the image cover the entire viewport */
+            background-repeat: no-repeat; /* This prevents the image from repeating */
+            background-attachment: fixed; /* This makes the background image fixed */
+            /* You can adjust other styles as needed */
+        }
+    .large-img {
+        width: 300px; /* Set the desired width */
+        height: auto; /* Maintain aspect ratio */
+    }
+    
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .blinking-text {
+            animation: blink 1s infinite; /* Adjust the animation duration as needed */
+        }
+   
+</style>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Online Book store</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/testimonials/b4.jpg" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="book-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: PhotoFolio
+  * Updated: Jul 27 2023 with Bootstrap v5.3.1
+  * Template URL: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+
+        /* Add more CSS styling as needed */
+    </style>
+</head>
+<body>
+   
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+    
+          <a href="index.html" class="logo d-flex align-items-center  me-auto me-lg-0">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!-- <img src="assets/img/logo.png" alt=""> -->
+            <i class="bi bi-book"></i>
+            <h1>Online Book Store</h1>
+          </a>
+    
+          <nav id="navbar" class="navbar">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li class="dropdown"><a href="#" class="active"><span>Browse Books</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="gallery.html">Nature</a></li>
+                  <li><a href="gallery.html">friends</a></li>
+                  <li><a href="gallery.html">Technology</a></li>
+                  <li><a href="gallery.html">action</a></li>
+                  <li><a href="gallery.html">history</a></li>
+                  <li><a href="gallery.html">Travel</a></li>
+                  <li class="dropdown"><a href="#"><span>Sub Menu</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    <ul>
+                      <li><a href="#">Sub Menu 1</a></li>
+                      <li><a href="#">Sub Menu 2</a></li>
+                      <li><a href="#">Sub Menu 3</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+
+            <div>
+                <input type="text" id="bookSearch" placeholder="Search books...">
+                <button onclick="searchBooks()">Search</button>
+            </div>
+          </nav><!-- .navbar -->
+          <div class="header-social-links">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="cart"><i class="bi bi-cart"></i></i></a>
+          </div>
+          <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+          <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    
+        </div>
+        </header>
+
+    <!-- Rest of your content -->
+    <ul>
+        <!-- Your list of publications -->
+    </ul>
+
+    <h1>Books in Ascending Order</h1>
+    <ul id="bookList">
+       
+    </ul>
+
+    <button onclick="sortBooks()">Sort Books</button>
+
+    <script>
+       
+        
+    
+    </script>
+    <center> <div class="card long-card">
+        <h2>Books Collection</h2>
+        <h3>Fiction collection</h3>
+    </br>
+         <ol type="I">
+    <li><a href="user1.html" class="">Classics</a></li>
+    <li><a href="home2.html" class="">Tragedy </a></li>
+    <li><a href="home2.html" class="">Science Fiction</a> </li>
+    <li> <a href="home2.html" class="">Fantasy</a></li>
+    <li><a href="home2.html" class="">Fairytale </a></li>
+    <li><a href="home2.html" class="">Adventure</a> </li>
+    <li><a href="home2.html" class="">Crime & Mystery</a> </li>
+    <li><a href="home2.html" class="">istorical Fiction</a> </li>
+    <li><a href="home2.html" class="">Humor</a> </li>
+    <li><a href="home2.html" class="">Romance</a> </li>
+    <li><a href="home2.html" class="">Horror</a> </li>
+    <li><a href="home2.html" class="">Dystopian</a> </li>
+
+</ol>
+</br>
+<h3>Non-Fiction collection</h3>
+</br>
+     <ol type="I">
+<li><a href="home2.html" class="">Biography/Autobiography</a></li>
+<li><a href="home2.html" class="">Memoirs</a></li>
+<li><a href="home2.html" class="">Self-Help Book</a> </li>
+<li> <a href="home2.html" class="">Narrative Nonfiction</a></li>
+<li><a href="home2.html" class="">Nonfiction Novels </a></li>
+</ol>
+
+         <!-- Add more content here -->
+    </div>
+</center>
+
+    
+   
+</body>
+</html>
